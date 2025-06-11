@@ -12,6 +12,8 @@ module.exports = defineConfig({
         pathname: '/ws',
       }
     }
-  }
-
+  },
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/igihe.vue/'
+    : '/'
 })

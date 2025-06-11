@@ -132,46 +132,7 @@
           </div>
           <div class="col-lg-9">            
             <h1 class="ele-header-title">&nbsp;</h1>
-            <div class="card mb-3 ziheruka-card" style="max-width: 100%;">
-              <img src="https://new.igihe.com/wp-content/uploads/2025/06/matama.webp" class="card-img-top ziheruka-thumb" alt="article"/>
-              <div class="card-body py-2 px-3 text-start d-flex flex-column">
-                <h1 class="card-title mb-0 ziheruka-title">Tshisekedi’s reluctance to embrace peace: A barrier to regional stability</h1>
-                <div class="d-flex align-items-center mb-1">
-                  <span class="meta-divider"></span>
-                  <small class="text-muted ms-2">June 2, 2025</small>
-                </div>
-                <small class="text-muted ms-2">
-                  Democratic Republic of Congo (DRC) has long been embroiled in conflicts that have destabilized the Great Lakes region. While various...
-                </small>
-              </div>
-            </div>
-            <!-- Article List with Vertical Blue Line and Dots -->
-            <div class="position-relative">
-              <div class="vertical-article-indicator d-none d-md-flex flex-column align-items-center">
-                <div
-                    v-for="(article, idx) in newsItems"
-                    :key="'dot-article-'+idx"
-                    :class="['article-dot', { active: idx === hoveredArticleIndex }]"
-                ></div>
-              </div>
-              <div
-                class="article-listing-with-dots"
-                @mouseleave="hoveredArticleIndex = null"
-              >
-                <div
-                  v-for="(article, idx) in newsItems"
-                  :key="'list-article-'+idx"
-                  class="article-list-item px-3 py-2"
-                  @mouseenter="hoveredArticleIndex = idx"
-                  :class="{ hovered: idx === hoveredArticleIndex }"
-                  style="cursor:pointer"
-                >
-                  <small class="article-date">{{ article.meta }}</small>
-                  <div class="article-title">{{ article.title }}</div>
-                  <hr class="article-separator" v-if="idx !== articles.length - 1" />
-                </div>
-              </div>
-            </div>
+            <Featured/>
             <BR/>
             <!---- LIST OF ADS AND MODULES -->
             <div class="row">
@@ -398,10 +359,11 @@ import Footer from './includes/Footer.vue'
 import * as bootstrap from 'bootstrap'
 import Ziheruka from './includes/Ziheruka.vue'
 import axios from 'axios'
+import Featured from './includes/Featured.vue'
 
 export default {
   name: 'Home',
-  components: { HeaderLayout, NewsCarousel , Ziheruka, Footer},
+  components: { HeaderLayout, NewsCarousel , Ziheruka, Footer, Featured },
   data() {
     return {
       currentIndex: 0,
