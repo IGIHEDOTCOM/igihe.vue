@@ -27,6 +27,7 @@
           <div class="news-content">
             <h3 class="h6 mb-1">{{ news.title }}</h3>
             <p class="mb-0 text-muted small">{{ news.summary }}</p>
+            <small class="time"><i class="fas fa-clock"></i> {{ news.date }}</small>
           </div>
         </div>
       </SwiperSlide>
@@ -99,9 +100,11 @@ const swiperRef = ref(null)
 .news-content h3,
 .news-content p {
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  /*text-overflow: ellipsis;*/
+  /*white-space: nowrap;*/
   margin-bottom: 0;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .news-content h3 {
@@ -117,5 +120,8 @@ const swiperRef = ref(null)
   height: 60px;
   object-fit: cover;
   flex-shrink: 0;
+}
+.time{
+  color:rgb(128, 128, 128);
 }
 </style>

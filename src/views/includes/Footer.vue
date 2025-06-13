@@ -24,7 +24,7 @@
       <hr class="border-light mt-4" />
 
       <div class="text-center pb-3 small">
-        &copy; {{ new Date().getFullYear() }} Your IGIHE ltd. All rights reserved.
+        &copy; {{ new Date().getFullYear() }}  IGIHE ltd. All rights reserved.
       </div>
     </div>
   </footer>
