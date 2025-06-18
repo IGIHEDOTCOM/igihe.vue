@@ -42,15 +42,15 @@
 
   <div :class="['collapse', 'navbar-collapse', { show: navOpen }]">
     <ul class="nav-list navbar-nav flex-column flex-lg-row gap-3">
-      <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Politics</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Health</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Sports</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Entertainment</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Technology</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Culture</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Tourism</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Economy</a></li>
+      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="/category/politics">Politics</a></li>
+      <li class="nav-item"><a class="nav-link" href="/category/health">Health</a></li>
+      <li class="nav-item"><a class="nav-link" href="/category/sports">Sports</a></li>
+      <li class="nav-item"><a class="nav-link" href="/category/entertainment">Entertainment</a></li>
+      <li class="nav-item"><a class="nav-link" href="/category/technology">Technology</a></li>
+      <li class="nav-item"><a class="nav-link" href="/category/culture">Culture</a></li>
+      <li class="nav-item"><a class="nav-link" href="/category/tourism">Tourism</a></li>
+      <li class="nav-item"><a class="nav-link" href="/category/economy">Economy</a></li>
     </ul>
   </div>
 </nav>

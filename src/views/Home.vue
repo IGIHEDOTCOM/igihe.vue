@@ -868,40 +868,8 @@ h1{
 .article-list-item.hovered {
   background: #e9f0ff;
 }
-.ad-box {
-  position: relative;
-  width: 100%;
-  min-height: 180px; /* Both boxes same height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background: #f1f1f1;
-}
 
-.ad-box img {
-  width: 100%;
-  height: auto;
-  max-height: 320px;
-  object-fit: contain;
-  display: block;
-}
 
-.ad-label {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  background: rgba(13, 110, 253, 0.9);
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  z-index: 10;
-}
 .article-list-simple {
   width: 100%;
 }
@@ -1178,4 +1146,40 @@ h1{
   background: #fff;
   border-top: none;
 }
+</style>
+<style>
+.ad-label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(13, 110, 253, 0.9);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  z-index: 10;
+}
+.ad-box {
+  position: relative;
+  width: 100%;
+  min-height: 180px; /* Both boxes same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #f1f1f1;
+}
+
+.ad-box img {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: contain;
+  display: block;
+}
+
 </style>
