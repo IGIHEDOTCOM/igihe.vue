@@ -51,6 +51,10 @@
       <li class="nav-item"><router-link  class="nav-link" to="/category/culture">Culture</router-link></li>
       <li class="nav-item"><router-link  class="nav-link" to="/category/tourism">Tourism</router-link></li>
       <li class="nav-item"><router-link  class="nav-link" to="/category/economy">Economy</router-link></li>
+      <li class="nav-item"><router-link  class="nav-link" to="/category/people">People</router-link></li>
+      <li class="nav-item"><router-link  class="nav-link" to="/category/environment">Environment</router-link></li>
+      <li class="nav-item"><router-link  class="nav-link" to="/category/religion">Religion</router-link></li>
+      <li class="nav-item"><router-link  class="nav-link" to="/category/news">News</router-link></li>
     </ul>
   </div>
 </nav>

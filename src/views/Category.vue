@@ -99,6 +99,18 @@
                     </div>
                   </div>
                 </div>
+                <div v-if="loading">
+                  <div class="skeleton-article" v-for="n in 5" :key="n">
+                    <div class="skeleton-thumb"></div>
+                    <div class="skeleton-lines">
+                      <div class="skeleton-line short"></div>
+                      <div class="skeleton-line"></div>
+                    </div>
+                  </div>
+                </div>
+                <div v-else>
+                  <!-- Render your real articles here -->
+                </div>
             </div>
             <div class="col-lg-7">
                 <!-- The widgets goes here-->
@@ -187,6 +199,10 @@
         </div>
     </section>
   <Footer/>
+   <!-- Loading overlay (does not replace content, just overlays it) -->
+  <div v-if="loading" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
 </template>
 
 <script>
@@ -205,7 +221,8 @@ export default {
             interval: null,
             articles: [],
             cat_id: 0, // This will be set based on the category
-            hovered: null,   
+            hovered: null,
+            loading: true,   
             wordCategoryMap : {
                 'politics': 48,
                 'health': 9,
@@ -214,7 +231,12 @@ export default {
                 'technology': 8,
                 'culture': 11,
                 'tourism': 14,
-                'economy': 47
+                'economy': 47,
+                'people': 17,
+                'environment': 13,
+                'religion': 15,
+                'news': 5,
+                'default': 0 // Fallback category ID
             }
         }
     },
@@ -262,8 +284,9 @@ export default {
             this.currentIndex = idx;
         },
         async getCategoryArticles() {
-            // retrieve articles from endpoint en.igihe.com/api/articles/?id_rubrique=this.cat_id
-            try{
+            this.loading = true;
+            try {
+                // retrieve articles from endpoint en.igihe.com/api/articles/?id_rubrique=this.cat_id
                 var url = `https://en.igihe.com/api/articles/?id_rubrique=${this.cat_id}`;
                 const response = await axios.get(`https://en.igihe.com/api/articles/?section=${this.cat_id}`);
                 this.articles = response.data; 
@@ -271,6 +294,8 @@ export default {
                 this.interval = setInterval(this.next, 5000);
             } catch (error) {
                 console.error('Error fetching articles:', error);
+            } finally {
+                this.loading = false;
             }
         }
     },    
@@ -521,5 +546,30 @@ export default {
   color: #2196f3;
   margin-right: 10px;
   vertical-align: middle;
+}
+/* Overlay covers the content but does not remove it */
+.loading-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  transition: opacity 0.3s;
+}
+
+/* Spinner style */
+.spinner {
+  width: 56px;
+  height: 56px;
+  border: 6px solid #2196f3;
+  border-top: 6px solid #e3f2fd;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 </style>
