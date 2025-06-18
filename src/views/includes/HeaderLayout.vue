@@ -42,15 +42,15 @@
 
   <div :class="['collapse', 'navbar-collapse', { show: navOpen }]">
     <ul class="nav-list navbar-nav flex-column flex-lg-row gap-3">
-      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="/category/politics">Politics</a></li>
-      <li class="nav-item"><a class="nav-link" href="/category/health">Health</a></li>
-      <li class="nav-item"><a class="nav-link" href="/category/sports">Sports</a></li>
-      <li class="nav-item"><a class="nav-link" href="/category/entertainment">Entertainment</a></li>
-      <li class="nav-item"><a class="nav-link" href="/category/technology">Technology</a></li>
-      <li class="nav-item"><a class="nav-link" href="/category/culture">Culture</a></li>
-      <li class="nav-item"><a class="nav-link" href="/category/tourism">Tourism</a></li>
-      <li class="nav-item"><a class="nav-link" href="/category/economy">Economy</a></li>
+      <li class="nav-item"><router-link  class="nav-link" to="/">Home</router-link></li>
+      <li class="nav-item"><router-link  class="nav-link" to="/category/politics">Politics</router-link></li>
+      <li class="nav-item"><router-link  class="nav-link" to="/category/health">Health</router-link></li>
+      <li class="nav-item"><router-link  class="nav-link" to="/category/sports">Sports</router-link></li>
+      <li class="nav-item"><router-link  class="nav-link" to="/category/entertainment">Entertainment</router-link></li>
+      <li class="nav-item"><router-link  class="nav-link" to="/category/technology">Technology</router-link></li>
+      <li class="nav-item"><router-link  class="nav-link" to="/category/culture">Culture</router-link></li>
+      <li class="nav-item"><router-link  class="nav-link" to="/category/tourism">Tourism</router-link></li>
+      <li class="nav-item"><router-link  class="nav-link" to="/category/economy">Economy</router-link></li>
     </ul>
   </div>
 </nav>

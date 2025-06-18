@@ -205,10 +205,28 @@ export default {
             interval: null,
             articles: [],
             cat_id: 0, // This will be set based on the category
-            hovered: null,         
+            hovered: null,   
+            wordCategoryMap : {
+                'politics': 48,
+                'health': 9,
+                'sports': 10,
+                'entertainment': 12,
+                'technology': 8,
+                'culture': 11,
+                'tourism': 14,
+                'economy': 47
+            }
         }
     },
     components: { HeaderLayout, Footer, HeroCarousel },
+    watch: {
+      category(newVal, oldVal) {
+        // Update cat_id and reload articles when the category prop changes
+        var wordCategoryMap = this.wordCategoryMap;
+        this.cat_id = wordCategoryMap[newVal.toLowerCase()] || 0;
+        this.getCategoryArticles();
+      }
+    },
     computed: {
         visibleArticles() {
             return this.articles
@@ -261,16 +279,7 @@ export default {
     },
     mounted() {        
         // Fetch articles when the component is mounted 
-        var wordCategoryMap = {
-                'politics': 48,
-                'health': 9,
-                'sports': 10,
-                'entertainment': 12,
-                'technology': 8,
-                'culture': 11,
-                'tourism': 14,
-                'economy': 47
-        };
+        var wordCategoryMap = this.wordCategoryMap;
         // Set the category ID based on the prop
         this.cat_id = wordCategoryMap[this.category.toLowerCase()] || 0;            
         this.getCategoryArticles();        
